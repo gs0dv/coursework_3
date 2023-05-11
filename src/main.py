@@ -5,7 +5,7 @@ def main():
     """
         Точка входа
     """
-    path = r'C:\Users\admin\PycharmProjects\cursovaitest\src\data\operations.json'
+    path = r'.\data\operations.json'
 
     # список всех транзакций
     transactions = load_file(path)
