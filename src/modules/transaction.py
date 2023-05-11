@@ -64,8 +64,7 @@ class Transaction:
 
         return f"{formated_date} {self.description}\n" \
                f"{data_from} -> {data_to}\n" \
-               f"{amount_currency}\n" \
-               f"{self.get_state()}"
+               f"{amount_currency}"
 
     def convert_data(self, data):
         """
@@ -111,10 +110,12 @@ class Transaction:
 
         date_time_obj = datetime.datetime.strptime(date_time_str, "%Y-%m-%dT%H:%M:%S.%f")
         date = date_time_obj.date()
+
         return date.strftime("%d.%m.%Y")
 
     def convert_date_in_sec(self):
         formated_date = datetime.datetime.strptime(self.date, "%Y-%m-%dT%H:%M:%S.%f")
+
         return (formated_date - datetime.datetime(1970, 1, 1)).total_seconds()
 
     def get_id(self):
